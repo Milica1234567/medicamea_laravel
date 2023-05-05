@@ -17,7 +17,11 @@ class PacijentFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'ime'=>$this->faker->firstName(),
+            'ime_roditelja'=>$this->faker->firstName(),
+            'prezime'=>$this->faker->lastName(),
+            'jmbg'=>$this->faker->regexify('[0-9]{13}'),
+            'telefon'=>$this->faker->phoneNumber()
         ];
     }
 }

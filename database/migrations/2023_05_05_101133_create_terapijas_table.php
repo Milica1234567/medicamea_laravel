@@ -14,8 +14,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('terapijas', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->bigInteger('pacijent_id')->unsigned();
+            $table->string('naziv_leka');
+            $table->string('nacin_primene');
+            $table->string('status');
+            $table->dateTime('datum_preuzimanja')->nullable();
             $table->timestamps();
+
+            $table->foreign('pacijent_id')->references('id')->on('pacijents');
         });
     }
 

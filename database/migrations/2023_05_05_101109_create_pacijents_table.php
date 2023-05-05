@@ -14,7 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('pacijents', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->string('ime');
+            $table->string('ime_roditelja');
+            $table->string('prezime');
+            $table->string('jmbg');
+            $table->string('telefon');
             $table->timestamps();
         });
     }

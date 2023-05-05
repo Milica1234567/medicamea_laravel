@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Pacijent;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,8 +17,14 @@ class TerapijaFactory extends Factory
      */
     public function definition()
     {
+        $status=$this->faker->randomElement(['preuzet', 'na cekanju']);
+
         return [
-            //
+            'pacijent_id'=>Pacijent::inRandomOrder()->first()->id,
+            'naziv_leka'=>$this->faker->company(),
+            'nacin_primene'=>$this->faker->sentence(10),
+            'status'=>$status,
+            'datum_preuzimanja'=> $status == 'preuzet' ? $this->faker->dateTimeThisDecade() : NULL
         ];
     }
 }

@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\ApiControll\v1;
 
 use App\Models\Terapija;
 use App\Http\Requests\StoreTerapijaRequest;
 use App\Http\Requests\UpdateTerapijaRequest;
+use App\Http\Controllers\Controller;
 
 class TerapijaController extends Controller
 {

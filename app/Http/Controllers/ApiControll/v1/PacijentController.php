@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\ApiControll\v1;
 
 use App\Models\Pacijent;
 use App\Http\Requests\StorePacijentRequest;
 use App\Http\Requests\UpdatePacijentRequest;
+use App\Http\Controllers\Controller;
 
 class PacijentController extends Controller
 {
