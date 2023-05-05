@@ -6,6 +6,8 @@ use App\Models\Pacijent;
 use App\Http\Requests\StorePacijentRequest;
 use App\Http\Requests\UpdatePacijentRequest;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\v1\PacijentResource;
+use App\Http\Resources\v1\PacijentCollection;
 
 class PacijentController extends Controller
 {
@@ -16,7 +18,7 @@ class PacijentController extends Controller
      */
     public function index()
     {
-        //
+        return new PacijentCollection(Pacijent::all());
     }
 
     /**
@@ -48,7 +50,7 @@ class PacijentController extends Controller
      */
     public function show(Pacijent $pacijent)
     {
-        //
+        return new PacijentResource($pacijent);
     }
 
     /**

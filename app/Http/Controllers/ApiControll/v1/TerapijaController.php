@@ -6,6 +6,9 @@ use App\Models\Terapija;
 use App\Http\Requests\StoreTerapijaRequest;
 use App\Http\Requests\UpdateTerapijaRequest;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\v1\TerapijaCollection;
+use App\Http\Resources\v1\TerapijaResource;
+
 
 class TerapijaController extends Controller
 {
@@ -16,7 +19,7 @@ class TerapijaController extends Controller
      */
     public function index()
     {
-        //
+        return new TerapijaCollection(Terapija::all());
     }
 
     /**
@@ -48,7 +51,7 @@ class TerapijaController extends Controller
      */
     public function show(Terapija $terapija)
     {
-        //
+        return new TerapijaResource($terapija);
     }
 
     /**
