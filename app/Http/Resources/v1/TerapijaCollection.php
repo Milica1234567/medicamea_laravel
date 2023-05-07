@@ -6,6 +6,7 @@ use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class TerapijaCollection extends ResourceCollection
 {
+    public static $wrap = 'terapije';
     /**
      * Transform the resource collection into an array.
      *

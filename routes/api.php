@@ -2,8 +2,11 @@
 
 use App\Http\Controllers\ApiControll\v1\PacijentController;
 use App\Http\Controllers\ApiControll\v1\TerapijaController;
+use App\Http\Controllers\ApiControll\v1\PacijentTerapijaController;
+use App\Http\Controllers\PController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +25,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //v1
 Route::group(['prefix'=>'v1', 'namespace'=>'App\Http\Controllers\ApiControll\v1'], function(){
     Route::apiResource('pacijent', PacijentController::class);
-    Route::apiResource('terapije', TerapijaController::class);
+    Route::apiResource('terapija', TerapijaController::class);
+    Route::get('/pacijent/{id}/terapija', [PacijentTerapijaController::class, 'index']);
 });
+//Route::get('/pacijenti', PController::class, 'index');
 
 

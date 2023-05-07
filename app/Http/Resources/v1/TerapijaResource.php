@@ -6,12 +6,14 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class TerapijaResource extends JsonResource
 {
+    
     /**
      * Transform the resource into an array.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return array|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
      */
+    //public static $wrap = 'terapije';
     public function toArray($request)
     {
         return [
@@ -19,7 +21,8 @@ class TerapijaResource extends JsonResource
             'nazivLeka'=>$this->naziv_leka,
             'nacinPrimene'=>$this->nacin_primene,
             'status'=>$this->status,
-            'datumPreuzimanja'=>$this->datum_preuzimanja
+            'datumPreuzimanja'=>$this->datum_preuzimanja,
+            'pacijent'=>$this->resource-> pacijent_id
         ];
     }
 }

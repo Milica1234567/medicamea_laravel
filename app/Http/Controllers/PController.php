@@ -1,16 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\ApiControll\v1;
+namespace App\Http\Controllers;
 
 use App\Models\Pacijent;
-use App\Http\Requests\StorePacijentRequest;
-use App\Http\Requests\UpdatePacijentRequest;
-use App\Http\Controllers\Controller;
-use App\Http\Resources\v1\PacijentResource;
-use App\Http\Resources\v1\PacijentCollection;
+use Illuminate\Http\Request;
 
-class PacijentController extends Controller
+class PController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      *
@@ -18,8 +16,8 @@ class PacijentController extends Controller
      */
     public function index()
     {
-        return new PacijentCollection(Pacijent::all());
-        //return Pacijent::all();
+        $pacijenti=Pacijent::all();
+        return $pacijenti;
     }
 
     /**
@@ -35,10 +33,10 @@ class PacijentController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StorePacijentRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorePacijentRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -51,11 +49,7 @@ class PacijentController extends Controller
      */
     public function show(Pacijent $pacijent)
     {
-        return new PacijentResource($pacijent);
-        //$pacijent=Pacijent::find($pacijent_id);
-        /*if(is_null($pacijent))
-            return response()->json('data not fount', 404);
-        return response()->json($pacijent);*/
+        //
     }
 
     /**
@@ -72,11 +66,11 @@ class PacijentController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdatePacijentRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Pacijent  $pacijent
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatePacijentRequest $request, Pacijent $pacijent)
+    public function update(Request $request, Pacijent $pacijent)
     {
         //
     }

@@ -51,6 +51,10 @@ class TerapijaController extends Controller
      */
     public function show(Terapija $terapija)
     {
+        /*$terapija=Terapija::find($terapija_id);
+        if(is_null($terapija))
+            return response()->json('data not fount', 404);
+        return response()->json($terapija);*/
         return new TerapijaResource($terapija);
     }
 
