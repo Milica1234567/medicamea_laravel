@@ -22,7 +22,8 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call([
             PacijentSeeder::class,
-            TerapijaSeeder::class
+            TerapijaSeeder::class,
+            UserSeeder::class
         ]);
     }
 }
